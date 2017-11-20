@@ -79,18 +79,31 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('vendor/jquery-easing'))
 
   gulp.src([
-      'node_modules/font-awesome/**',
-      '!node_modules/font-awesome/**/*.map',
-      '!node_modules/font-awesome/.npmignore',
-      '!node_modules/font-awesome/*.txt',
-      '!node_modules/font-awesome/*.md',
-      '!node_modules/font-awesome/*.json'
+      'node_modules/font-awesome/**/*.*(otf|eot|svg|ttf|woff|woff2)',
+      'node_modules/font-awesome/**/*.min.css',      
     ])
     .pipe(gulp.dest('vendor/font-awesome'))
 })
 
 // Default task
 gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
+
+gulp.task('deployable',['default'],function(){
+  gulp.src([
+    './**/*.min.css',
+    '!./node_modules/**',
+    './**/*.min.js',
+    '!./node_modules/**',
+    './**/*.*(jpg|png)',
+    'index.html'    
+  ])
+  .pipe(gulp.dest('deploy'))
+
+  gulp.src([
+    './vendor/font-awesome/fonts/*'
+  ])
+  .pipe(gulp.dest('deploy/vendor/font-awesome/fonts/'))
+});
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
