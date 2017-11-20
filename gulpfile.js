@@ -47,7 +47,7 @@ gulp.task('minify-css', ['sass'], function() {
 
 // Minify custom JS
 gulp.task('minify-js', function() {
-  return gulp.src('js/freelancer.js')
+  gulp.src('js/*.js')
     .pipe(uglify())
     .pipe(header(banner, {
       pkg: pkg
@@ -65,9 +65,9 @@ gulp.task('minify-js', function() {
 // NOTE: requires `npm install` before running!
 gulp.task('copy', function() {
   gulp.src([
-      'node_modules/bootstrap/dist/**/*',
-      '!**/npm.js',
-      '!**/bootstrap-theme.*',
+      'node_modules/bootstrap/dist/**/*.min.js',
+      '!**/*.map',
+      'node_modules/bootstrap/dist/**/*.min.css',
       '!**/*.map'
     ])
     .pipe(gulp.dest('vendor/bootstrap'))
@@ -88,7 +88,7 @@ gulp.task('copy', function() {
 // Default task
 gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
 
-gulp.task('deployable',['default'],function(){
+gulp.task('package',function(){
   gulp.src([
     './**/*.min.css',
     '!./node_modules/**',
