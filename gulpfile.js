@@ -6,6 +6,8 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var filter = require('gulp-filter');
+var deletefile = require('gulp-delete-file');
+var wait = require('gulp-wait');
 var pkg = require('./package.json');
 
 // Set the banner content
@@ -20,6 +22,7 @@ var banner = ['/*!\n',
 // Compiles SCSS files from /scss into /css
 gulp.task('sass', function() {
   return gulp.src('scss/freelancer.scss')
+    .pipe(wait(50))
     .pipe(sass())
     .pipe(header(banner, {
       pkg: pkg
@@ -46,8 +49,8 @@ gulp.task('minify-css', ['sass'], function() {
 });
 
 // Minify custom JS
-gulp.task('minify-js', function() {
-  gulp.src('js/*.js')
+gulp.task('minify-js', function() {  
+  gulp.src('js/!(*.min.js)')
     .pipe(uglify())
     .pipe(header(banner, {
       pkg: pkg
@@ -85,7 +88,6 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('vendor/font-awesome'))
 })
 
-// Default task
 gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
 
 gulp.task('package',function(){
@@ -122,4 +124,14 @@ gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() 
   // Reloads the browser whenever HTML or JS files change
   gulp.watch('*.html', browserSync.reload);
   gulp.watch('js/**/*.js', browserSync.reload);
+});
+
+// clean
+gulp.task('clean',function(){
+  var regex = /.*\.min\.js{1}/;
+  gulp.src(['./js/*.js'])
+    .pipe(deletefile({
+      reg: regex,
+      deleteMatch: true
+    }))
 });
