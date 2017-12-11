@@ -82,16 +82,35 @@ hr.star-primary-lighter:after{
 }
 
 section {
+  color: $theme-primary;
+  background-color: $theme-lighter;
   padding: 100px 0;
   h2 {
     font-size: 3em;
     margin: 0;
+  }
+  a,
+  a.active,
+  a:active,
+  a:focus,
+  a:hover {
+    color: $theme-link;
+    outline: none;
   }
 }
 
 section.success {
   color: white;
   background: $theme-success;
+  a,
+  a.active,
+  a:active,
+  a:focus,
+  a:hover {
+    color: $theme-success-link;
+    outline: none;
+  }
+
 }
 @media(max-width:767px) {
   section {

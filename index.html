@@ -29,24 +29,32 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#portfolio">Projects</a>
+            </li>    
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#publications">Publications</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#publications">Publications</a>
+              <a class="nav-link js-scroll-trigger" href="http://plutoniumdinosaur.com/docs/cv/thorne2017CV.pdf">CV</a>
             </li>
+    
             <!-- <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li> -->
+                  <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                </li> -->
           </ul>
         </div>
       </div>
@@ -63,12 +71,27 @@
         </div>
       </div>
     </header>
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+          <h2 class="text-center">About</h2>
+          <hr class="star-light">
+          <div class="row justify-content">
+            <div class="col-lg-6 ml-auto">
+              <p>I am a PhD student in the department of Computer Science at North Carolina State University where I work with <a href="https://www.csc.ncsu.edu/people/ahjhala">Dr. Arnav Jhala </a>.</p>
+            </div>
+            <div class="col-lg-6 mr-auto">
+              <p>My full CV can be found <a href="http://plutoniumdinosaur.com/docs/cv/thorne2017CV.pdf">here</a></p>
+            </div>
+          </div>
+        </div>
+    </section>
 
     <!-- Portfolio Grid Section -->
     <section id="portfolio">
       <div class="container">
         <h2 class="text-center">Projects</h2>
-        <hr class="star-primary">
+        <hr class="star-primary-lighter">
         <div class="row justify-content-center">
           <div class="col-sm-4 portfolio-item">
             <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
@@ -81,6 +104,16 @@
             </a>
           </div>
           <div class="col-sm-4 portfolio-item">
+            <a class="portfolio-link" href="#portfolioModal3" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/portfolio/procDefenseCharged.png" alt="">
+            </a>
+          </div>
+          <div class="col-sm-4 portfolio-item">
             <a class="portfolio-link" href="#portfolioModal2" data-toggle="modal">
               <div class="caption">
                 <div class="caption-content">
@@ -90,16 +123,7 @@
               <img class="img-fluid" src="img/portfolio/donjonSkinnerUI.jpg" alt="">
             </a>
           </div>
-          <!-- <div class="col-sm-4 portfolio-item">
-            <a class="portfolio-link" href="#portfolioModal3" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/circus.png" alt="">
-            </a> -->
-          </div>
+          
           <div class="col-sm-4 portfolio-item">
             <!--<a class="portfolio-link" href="#portfolioModal4" data-toggle="modal">
               <div class="caption">
@@ -134,27 +158,13 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="success" id="experience">
-      <div class="container">
-        <h2 class="text-center">Experience</h2>
-        <hr class="star-light">
-        <div class="row justify-content">
-          <div class="col-lg-6 ml-auto">
-            <p>I am a computer science PhD student at North Carolina State University where I work with <a href="https://www.csc.ncsu.edu/people/ahjhala">Dr. Arnav Jhala </a>.</p>
-          </div>
-          <div class="col-lg-6 mr-auto">
-            <p>My full CV can be found <a href="http://plutoniumdinosaur.com/docs/cv/thorne2017CV.pdf">here</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
+
     
     <!-- Publications Section-->
-    <section id="publications">
+    <section class="success" id="publications">
       <div class="container">
         <h2 class="text-center">Publications</h2>
-        <hr class="star-primary">
+        <hr class="star-light">
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <br>
@@ -163,7 +173,8 @@
                 <a href="http://plutoniumdinosaur.com/docs/publications/barot2017bardic.pdf">Bardic: Generating Multimedia Narrative Reports for Game Logs</a>. 
                 <em>Proceedings of the 10th Workshop on Intelligent Narrative Technologies at the 13th AAAI Conference on Artifical Intelligence and Interactive Digital Entertainment</em>
                  (INT 10), pages 154-161, Snowbird, UT, USA, 2017.
-              </p>
+            </p>
+            <br>
             <p>
               <strong>Brandon R. Thorne</strong>
               and R. Michael Young; 
@@ -182,6 +193,21 @@
         </div>
       </div>
     </section>
+        <!-- Experience Section -->
+        <section class="" id="experience">
+            <div class="container">
+              <h2 class="text-center">Experience</h2>
+              <hr class="star-primary-lighter">
+              <div class="row justify-content">
+                <div class="col-lg-6 ml-auto">
+                  <p></p>
+                </div>
+                <div class="col-lg-6 mr-auto">
+                  <p>My full CV can be found <a href="http://plutoniumdinosaur.com/docs/cv/thorne2017CV.pdf">here</a></p>
+                </div>
+              </div>
+            </div>
+          </section>
     <!-- Contact Section -->
     <!-- <section id="contact">
       <div class="container">
@@ -238,7 +264,8 @@
           <div class="row justify-content-center">
             <div class="footer-col col-md-4">
               <h3>Location</h3>
-              <p>North Carolina State University <br>
+              <p>North Carolina State University<br>
+                Venture II Suite 530<br>
                 Raleigh, NC</p>
             </div>
             <!-- <div class="footer-col col-md-4">
@@ -380,22 +407,20 @@
                 <div class="modal-body">
                   <h2>ProcDefense</h2>
                   <hr class="star-primary">
-                  <img class="img-fluid img-centered" src="img/portfolio/circus.png" alt="">
-                  <p></p>
+                  <img class="img-fluid img-centered" src="img/portfolio/procDefenseCharged.png" alt="">
+                  <p>ProcDefense is an arcade-style game created as a research platform for player skill training. It provides an interface for dynamically adjusting game difficulty along any properties of the particle system.  Current work seeks to establish a progression of values that constitute monotonically increasing difficulty via user study.  Future work will explore player and pedagogical models to inform difficulty adjustment.</p>
                   <ul class="list-inline item-details">
-                    <li>Client:
+                    <li>
                       <strong>
-                        <a href="http://startbootstrap.com">Start Bootstrap</a>
+                        <a href="http://go.ncsu.edu/procdefense">Play</a>
                       </strong>
                     </li>
-                    <li>Date:
+                    <li>
                       <strong>
-                        <a href="http://startbootstrap.com">April 2014</a>
                       </strong>
                     </li>
-                    <li>Service:
-                      <strong>
-                        <a href="http://startbootstrap.com">Web Development</a>
+                    <li>
+                      <strong>                        
                       </strong>
                     </li>
                   </ul>
