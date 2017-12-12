@@ -31,6 +31,15 @@ h6 {
   text-transform: uppercase;
 }
 
+hr.thin{
+  width: 75%;
+  //max-width: 350px;  
+  padding: 0;
+  text-align: center;
+  border: none;
+  border-top: solid 2px;
+}
+
 hr.star-light,
 hr.star-primary,
 hr.star-primary-lighter  {
